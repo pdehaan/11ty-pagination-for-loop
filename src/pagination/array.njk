@@ -1,0 +1,21 @@
+---
+pagination:
+  data: array
+  size: 1
+  alias: item
+permalink: "pagination/array/{{ item | keys | first }}/"
+---
+
+<pre>
+{{ item | inspect | safe }}
+</pre>
+
+{% for key, value in item %}
+  index={{ loop.index0 }}
+  key={{ key | inspect | safe }}
+  value={{ value | inspect | safe }}
+
+  {%- for p in value %}
+    value.{{ loop.index0 }}={{ p | inspect | safe }}
+  {%- endfor %}
+{% endfor %}

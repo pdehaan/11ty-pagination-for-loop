@@ -1,0 +1,11 @@
+---
+# Note: Doesn't look like you can paginate over a Map() instance.
+pagination:
+  data: map
+  size: 1
+  alias: item
+---
+
+<pre>
+{{ item | inspect | safe }}
+</pre>

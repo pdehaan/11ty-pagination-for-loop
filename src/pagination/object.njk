@@ -1,0 +1,16 @@
+---
+pagination:
+  data: object
+  size: 1
+  alias: key
+permalink: "pagination/object/{{ key | slug }}/"
+---
+
+{%- set value = object[key] -%}
+
+key={{ key | inspect | safe }}
+value={{ value | inspect | safe }}
+
+{%- for p in value %}
+  value.{{ loop.index0 }}={{ p | inspect | safe }}
+{%- endfor %}

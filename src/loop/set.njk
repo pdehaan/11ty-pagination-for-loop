@@ -1,0 +1,10 @@
+{% for item in set %}
+  index={{ loop.index0 }}
+  item={{ item | inspect | safe }}
+
+  {%- for key, value in item %}
+    index={{ loop.index0 }}
+    key={{ key | inspect | safe }}
+    value={{ value | inspect | safe }}
+  {%- endfor %}
+{% endfor %}
